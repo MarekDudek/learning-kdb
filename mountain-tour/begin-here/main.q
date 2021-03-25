@@ -10,5 +10,6 @@ url:"https://code.kx.com/download/data/example.csv"
 count t:("SFI";enlist csv)0: system "curl -Ls ",url
 `:example.csv set t
 show select from t where qty>98
+\l suppliers-and-parts.q
 \a
 exit 0
