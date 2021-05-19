@@ -10,10 +10,9 @@ nyse:([]
  )
 
 nyse,:`symbol`date`open`high`low`close`volume!(`AA; 1999.01.01; 55.92; 55.92; 55.92; 55.92; 0)
-show select from nyse
 
-path:`:./nyse/NYSE_19990101.csv
-data:("SDFFFFI";enlist",") 0: path
-show meta data
+path:`:./data/nyse.csv
+nyse:("SDFFFFI";enlist",") 0: path
+show meta nyse
 
 /exit 0
