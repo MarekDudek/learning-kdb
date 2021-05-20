@@ -1,4 +1,4 @@
-system "d .q99Test";
+\d .q99Test
 
 testQ1:{.qunit.assertEquals[last `a`b`c`d; `d; "Find the last box of a list"]};
 
@@ -17,4 +17,7 @@ testQ6:{.qunit.assertEquals[isPalindrome "xamax"; 1b; "Find out whether a list i
 flatten:{[l]
     $[(count l)~count raze l;:l;:flatten raze l]
     };
-testQ7:{.qunit.assertEquals[flatten ((1;2;3);(1;(2;(3;4)));(1;2)); 1 2 3 1 2 3 4 1 2; "Flatten"]};
+testQ7:{.qunit.assertEquals[flatten ((1;2;3);(1;(2;(3;4)));(1;2)); 1 2 3 1 2 3 4 1 2; "Flatten a nested list structure"]};
+
+compress:{[l]: l where differ l;}
+testQ8:{.qunit.assertEquals[compress[1 1 1 1 2 2 1 2 3 3 2 2 1]; 1 2 1 2 3 2 1; "Eliminate consecutive duplicates of list element"]};
