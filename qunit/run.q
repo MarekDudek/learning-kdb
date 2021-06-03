@@ -2,6 +2,9 @@
 \l ./qunit/mymod.q
 \l ./qunit/mymodTest.q
 
-.qunit.runTests `.mymodTest
+runTestsResult:.qunit.runTests `.mymodTest
+runTestsResult
+
+.qunit.generateReport[runTestsResult; `:./test_results.html]
 
 \\
